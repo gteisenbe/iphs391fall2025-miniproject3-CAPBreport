@@ -1,22 +1,5 @@
-# Project outline synthesis
-
-**User:** Anonymous (gteisenbe@gmail.com)  
-**Created:** 11/12/2025 10:34:20  
-**Updated:** 11/12/2025 21:43:09  
-**Exported:** 11/12/2025 21:43:30  
-**Link:** [https://chatgpt.com/c/6914a8fb-d384-8333-9995-7d61e061e8b6](https://chatgpt.com/c/6914a8fb-d384-8333-9995-7d61e061e8b6)  
-
-## Response:
-Thought for 18s
-
-````markdown
 # Mini-Project #3 — CAPB Report  
 **Title:** Agentic RAG over Social-Media Emotion Posts (Kaggle) for Grounded, Cited Answers  
-**Author:** <your name>  
-**Course:** AI Mini-Project Series  
-**Due:** Nov 12
-
----
 
 ## 1. Project Context & Use Case
 
@@ -45,10 +28,6 @@ context:
     - "≥80% correct answers on a small gold set"
     - "≥80% answers include at least one correct citation"
     - "≤5s end-to-end latency on laptop CPU"
-````
-
-* * *
-
 2\. Data & Constraints
 ----------------------
 
@@ -70,7 +49,6 @@ data_constraints:
   cost_limit: "free/OSS"
   latency_target: 5
   security: "local files; no PII beyond public tweet text"
-```
 
 **Notes on ethics & terms:**
 
@@ -78,7 +56,6 @@ data_constraints:
 *   No scraping during grading; the repo includes **small samples** plus a script to load the Kaggle file locally.
 *   Report explicitly cautions against clinical use; this is an **educational demo**.
 
-* * *
 
 3\. RAG Architecture (MVP)
 --------------------------
@@ -307,23 +284,7 @@ evaluation:
   notes: "Failures mostly multi-hop constraints; synonym expansion helps."
 ```
 
-* * *
 
-8\. Submission Checklist (Rubric Alignment)
--------------------------------------------
-
-*    **Problem & Use Case (15 pts):** Clear domain, users, success metrics
-*    **Data & Constraints (15 pts):** Kaggle corpus, preprocessing, ethics, limits
-*    **Architecture (20 pts):** MVP RAG with rationale + agentic re-query rule
-*    **Component Bakeoff (15 pts):** Alternatives listed, choice justified
-*    **Evaluation (15 pts):** 15-Q test, %correct, %cited, latency; sample findings
-*    **Risks & Future Work (10 pts):** Edge cases, mitigations, roadmap
-*    **Presentation (10 pts):** Organized Markdown, valid YAML blocks
-
-```
-
-::contentReference[oaicite:0]{index=0}
-```
 
 
 
