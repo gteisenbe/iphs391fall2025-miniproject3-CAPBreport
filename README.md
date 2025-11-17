@@ -1,24 +1,47 @@
-# Mini Project 3 — Agentic RAG on Social-Media
+# 🧠 Mini Project #3 — Agentic RAG over Social-Media Emotion Posts  
+*AI Mini-Project Series | Composable AI Project Blueprint (CAPB)*
 
-A small, reproducible **RAG** demo over a **Kaggle emotion-labeled tweets** dataset.  
-Answers natural-language questions with **grounded, cited examples** from the corpus.
+## 📘 Overview
+This repository contains my submission for **Mini-Project #3** in the *AI Mini-Project Series*.  
+The goal is to design and document a **Retrieval-Augmented Generation (RAG)** pipeline using the **CAPB (Composable AI Project Blueprint)** framework.
 
-## What’s here
-- **Report:** `reports/report.md` (CAPB format: context, data, MVP architecture, bakeoff, eval, risks)
-- **Code:** minimal pipeline — ingest → embed → retrieve → generate (with citations)
-- **Data:** script expects a local Kaggle CSV → converts to `data/processed/posts.jsonl`
+My chosen domain is **social media and psychology** — specifically, understanding how emotions are expressed across posts.  
+Using the **Kaggle Emotion-Labeled Tweets** dataset, this system performs **grounded question-answering**.
+---
 
-## Quick start
-```bash
-# setup
-python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+## 🎯 Project Objectives
+- Build a **minimal viable RAG system (MVP)** for short-text corpora.  
+- Evaluate **retrieval quality, grounding accuracy, and latency**.  
+- Demonstrate clear **design reasoning and reproducibility** through CAPB documentation.  
+- Explore how RAG can support **trustworthy and explainable insights** from public online text.
 
-# prepare data (convert Kaggle CSV to JSONL)
-python src/data/clean.py  --in data/raw/tweets.csv  --out data/processed/posts.jsonl
+---
 
-# build vector index (Chroma + e5-small)
-python src/index/build_chroma.py  --in data/processed/posts.jsonl  --db .chroma
+## 🧩 CAPB Structure
+This project follows the official CAPB format:
 
-# evaluate baseline (15 questions; reports metrics)
-python src/eval/evaluate.py  --db .chroma  --k 5
+| Section | Description |
+|----------|-------------|
+| **1. Project Context** | Defines domain, use case, users, and measurable success metrics. |
+| **2. Data & Constraints** | Describes dataset sources, preprocessing, and ethical limitations. |
+| **3. RAG Architecture (MVP)** | Outlines the pipeline, components, and rationale for design choices. |
+| **4. Component Bakeoff** | Compares tool alternatives (e.g., Chroma vs. FAISS, e5-small vs. bge-small). |
+| **5. Evaluation** | Provides 15 manual Q&A tests with retrieval metrics and latency results. |
+| **6. Risks & Future Work** | Notes hallucination risks, data bias, and next steps for improvement. |
+| **7. References** | Lists supporting resources (papers, repos, datasets). |
+
+---
+
+## 💾 Dataset
+**Source:** [Kaggle – Emotion-Labeled Tweets Dataset](https://www.kaggle.com/datasets)  
+**Domain:** Social Media / Psychology  
+**Description:** Each record contains a short tweet and an associated emotion label (*joy, sadness, anger, fear, love, surprise*).  
+**Subset Used:** ~10k–30k posts, cleaned and anonymized.  
+**Format:** `CSV → JSONL` with fields `{id, text, emotion}`
+
+**Ethical Use:**  
+All data are public and used only for educational demonstration.  
+No scraping or PII beyond provided text.  
+No claims of psychological assessment are made.
+
+
